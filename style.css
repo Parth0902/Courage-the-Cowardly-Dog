@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#canvas{
+    border:3px solid black;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 500px;
+}
+
+#layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire{
+    display: none;
+}
