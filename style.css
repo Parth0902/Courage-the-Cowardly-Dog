@@ -10,11 +10,20 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    width: 500px;
+    width: 900px;
     height: 500px;
     font-family: 'Creepster', cursive;
 }
 
+.controls{
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    /* background-color: aqua; */
+    width: 100%;
+ 
+}
 #layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire,#boom,#heart{
     display: none;
 }

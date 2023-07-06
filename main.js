@@ -9,7 +9,7 @@ window.addEventListener('load',()=>
 {
     const canvas=document.getElementById('canvas');
     const ctx=canvas.getContext('2d');
-    canvas.width=500;
+    canvas.width=900;
     canvas.height=500;
 
     
@@ -29,15 +29,17 @@ window.addEventListener('load',()=>
             this.enemies=[];
             this.particles=[];
             this.collisions=[];
+            this.floatingMessages=[];
             this.maxParticles=50;
             this.enemyTimer=0;
             this.enemyInterval=1000;
             this.debug=false;
             this.score=0;
+            this.winningScore=40;
             this.gameColor='black';
             this.player.currentState=this.player.states[0];
             this.player.currentState.enter();
-            this.maxTime=10000;
+            this.maxTime=30000;
             this.gameOver=false;
             this.time=0;
             this.lives=5;
@@ -63,7 +65,13 @@ window.addEventListener('load',()=>
             this.enemies.forEach(object=>
                 {
                     object.update(deltaTime);
-                    if(object.markedForDeletion) this.enemies.splice(this.enemies.indexOf(object),1);
+                  
+                })
+
+            this.floatingMessages.forEach(object=>
+                {
+                    object.update();
+                   
                 })
             
              //handle Particles
@@ -71,7 +79,7 @@ window.addEventListener('load',()=>
                 {
                 
                     particle.update();
-                    if(particle.markedForDeletion) this.particles.splice(index,1);
+                   
                 })
 
                 if(this.particles.length>this.maxParticles)
@@ -83,10 +91,14 @@ window.addEventListener('load',()=>
 
              this.collisions.forEach((collision,index)=>{
                 collision.update(deltaTime);
-                if(collision.markedForDeletion) this.collisions.splice(index,1);
+                
              });
+            
 
-
+            this.collisions=this.collisions.filter(collision=>!collision.markedForDeletion);
+            this.particles=this.particles.filter(particle=>!particle.markedForDeletion);
+            this.enemies=this.enemies.filter(enemy=>!enemy.markedForDeletion);
+            this.floatingMessages=this.floatingMessages.filter(message=>!message.markedForDeletion);
 
         }
 
@@ -105,12 +117,18 @@ window.addEventListener('load',()=>
                
             })
 
-            console.log(this.collisions)
+        
             this.collisions.forEach((collision)=>
             {
                 collision.draw(context);
                
             })
+
+            this.floatingMessages.forEach(object=>
+                {
+                   object.draw(context);    
+                   
+                })
         }
 
         addEnemy(){
