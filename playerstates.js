@@ -41,7 +41,7 @@ export class Sitting extends State{
         if(input.includes('Enter')){
             this.game.player.setState(states.rolling,2)
         }
-
+      
     }
 }
 

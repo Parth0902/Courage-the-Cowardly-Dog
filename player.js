@@ -59,8 +59,10 @@ export class Player{
         this.y+=this.vy;
         if(!this.onGround())this.vy+=this.weight;
         else this.vy=0;
-        
-        if(this.y>this.game.height-this.game.groundMargin-this.height)this.y=this.game.height-this.height-this.game.groundMargin;
+        if(this.y>this.game.height-this.game.groundMargin-this.height)
+        {
+            this.y=this.game.height-this.height-this.game.groundMargin;
+        }
         //sprite Animations
         if(this.frameTimer>this.frameInterval) 
         {
