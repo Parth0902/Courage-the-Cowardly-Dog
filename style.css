@@ -14,6 +14,6 @@
     height: 500px;
 }
 
-#layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire{
+#layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire,#boom{
     display: none;
 }

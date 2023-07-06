@@ -41,11 +41,11 @@ export class Flash extends Particle{
     {
         super(game);
         this.game=game;
-        this.size=Math.random()*100+100;
+        this.size=Math.random()*100+30;
         this.x=x;
         this.y=y;
-        this.speedX=Math.random()*6-3;
-        this.speedY=Math.random()*2+2;
+        this.speedX=Math.random()*6-4;
+        this.speedY=Math.random()*2+1;
         this.gravity=0;
         this.image=document.getElementById('fire');
     }
@@ -70,7 +70,7 @@ export class Fire extends Particle{
         super();
         this.game=game;
         this.image=document.getElementById('fire');
-        this.size=Math.random()*100+100;
+        this.size=Math.random()*100+50;
         this.speedX=1;
         this.speedY=1;
         this.x=x;
