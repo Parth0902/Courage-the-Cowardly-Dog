@@ -13,10 +13,10 @@ export class Input{
                e.key==='Enter'     &&
              this.keys.indexOf(e.key)===-1)
             {
-                if(this.keys.length<3)
-                {
+             
+                
                     this.keys.push(e.key);
-                }
+                
             }
             else if(e.key === 'd') this.game.debug=! this.game.debug;
             console.log(this.keys);
