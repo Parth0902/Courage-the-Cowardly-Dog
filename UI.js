@@ -36,7 +36,7 @@ export class UI{
                 context.fillText("Mission completed",this.game.width* 0.5,this.game.height*0.5-20);
                 context.font= this.fontsize* 0.7+ 'px '+this.fontFamily;
                 context.fillText("Nice!! you have completed this mission",this.game.width* 0.5,this.game.height*0.5 +20);
-
+                document.getElementById('reload-btn').classList.toggle('abc');
 
             }else
             {

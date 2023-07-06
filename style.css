@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black;
+}
 #canvas{
     border:3px solid black;
     position: absolute;
@@ -20,10 +23,19 @@
     bottom: 30px;
     display: flex;
     justify-content: center;
-    /* background-color: aqua; */
     width: 100%;
  
 }
+
+.controls button{
+    padding: 10px 15px;
+    border: none;
+    background-color: blue;
+    border-radius: 12px;
+    cursor: pointer;
+   
+}
+
 #layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire,#boom,#heart{
     display: none;
 }
