@@ -12,8 +12,9 @@
     transform: translate(-50%,-50%);
     width: 500px;
     height: 500px;
+    font-family: 'Creepster', cursive;
 }
 
-#layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire,#boom{
+#layer1,#layer2,#layer3,#layer4,#layer5,#fly,#plant,#bigSpider,#fire,#boom,#heart{
     display: none;
 }

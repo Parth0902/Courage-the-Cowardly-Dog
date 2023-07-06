@@ -19,7 +19,7 @@ window.addEventListener('load',()=>
         {
             this.width=width;
             this.height=height;
-            this.groundMargin=80;
+            this.groundMargin=40;
             this.player=new Player(this);
             this.background=new Background(this);
             this.input=new Input(this);
@@ -40,7 +40,7 @@ window.addEventListener('load',()=>
             this.maxTime=10000;
             this.gameOver=false;
             this.time=0;
-       
+            this.lives=5;
         }
 
     

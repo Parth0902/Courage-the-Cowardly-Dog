@@ -3,8 +3,9 @@ export class UI{
     {
         this.game=game;
         this.fontsize=30;
-        this.fontFamily='Helvetica';
+        this.fontFamily='Creepster';
         this.fontColor='black';
+        this.lifeImage=document.getElementById('heart');
     }
 
     draw(context){
@@ -21,6 +22,11 @@ export class UI{
 
         context.font=this.fontsize *.8 + 'px '+ this.fontFamily;
         context.fillText('Time: '+(this.game.time*0.001).toFixed(1),20,80);
+        for(let i=0;i<this.game.lives;i++)
+        {
+            context.drawImage(this.lifeImage ,25*i+20,95,22,22)
+        }
+
         if(this.game.gameOver){
             context.textAlign='center';
             context.font=this.fontsize*2+ 'px '+ this.fontFamily;
